@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 3em;
+  background-image: url('./assets/Tax.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@media (max-width: 768px){
+  body{
+    background-size: auto 100%;
+  }
+}

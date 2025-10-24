@@ -1,0 +1,124 @@
+.App {
+  text-align: center;
+}
+ 
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+ 
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+ 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+ 
+.App-link {
+  color: #61dafb;
+}
+ 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+ 
+.message
+{
+  font-family:cursive;
+    font-size : 1.3em;
+    line-height : 1.3;
+    color:rgb(0, 1, 5);
+}
+ 
+.messageOne{
+  font-family:cursive;
+    font-size : 1.2em;
+    line-height : 1.3;
+    color:rgb(123, 24, 7);
+}
+
+.book{
+  font-family:cursive;
+  color:rgb(94, 37, 14);
+  text-align: center;
+  font-size : 3em;
+}
+ 
+form, .myProfile
+{
+  border : 3px solid rgb(255, 255, 255);
+  border-radius : 15px;
+  padding: 12px;  
+  font-family:cursive;
+  color:rgb(15, 1, 1);
+}
+ 
+.heading{
+  text-align: left;
+  padding-left: 220px;
+  color:rgb(93, 51, 136);
+  font-family:cursive
+}
+ 
+.success{
+  font-size:larger;
+}
+ 
+.details{
+  color: rgb(9, 9, 9);
+  font-family:cursive
+}
+
+.head{
+  color:rgb(94, 37, 14);
+  font-family:cursive;
+  text-align: center;
+}
+
+.nav{
+  color:rgb(38, 38, 185);
+  font-family:cursive;
+  text-align: center;
+ 
+
+}
+
+.form-background{
+  background-color: rgba(245, 226, 184, 0.368);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.custom-table {
+  color: rgba(245, 226, 184, 0.368);
+  border-radius: 8px;
+  overflow: hidden;
+
+}
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+}
