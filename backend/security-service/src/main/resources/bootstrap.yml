@@ -1,0 +1,19 @@
+server:
+    port: 9250
+
+spring:
+    application:
+        name: SecurityMS
+    cloud:
+        consul:
+            host: localhost
+            discovery:
+                hostname: localhost
+            config:
+                enabled: true
+                prefix: config
+                fail-fast: false
+                defaultContext: application
+                data-key: data
+                profileSeparator: '::'
+                format: YAML

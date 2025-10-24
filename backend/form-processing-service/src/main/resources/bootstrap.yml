@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: FormProcessingMS
+  cloud:
+    consul:
+        host: localhost
+        discovery:
+            hostname: localhost
+            health-check-url: http://localhost:${server.port}${server.servlet.context-path}/actuator
+        config:
+            enabled: true
+            prefix: config
+            fail-fast: false
+            defaultContext: application
+            data-key: data
+            profileSeparator: '::'
+            format: YAML
+  jpa:
+    hibernate:
+      ddl-auto: none  
+
+server:
+  port: 9600
+  servlet:
+    context-path: /api/v1/form-ms
+
+UserService:
+  url: lb://SecurityMS

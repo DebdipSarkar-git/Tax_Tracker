@@ -1,0 +1,8 @@
+General:
+  EXCEPTION_MESSAGE: Request could not be processed due to some issue. Please try again!
+Service:
+  USER_NOT_FOUND: User Not Found
+  INVALID_PASSWORD: Password is Invalid
+  USERNAME_ALREADY_EXISTS: Username already exists
+  EMAIL_ALREADY_EXISTS: Email already exists
+  REGISTRATION_FAILED: Registration Failes

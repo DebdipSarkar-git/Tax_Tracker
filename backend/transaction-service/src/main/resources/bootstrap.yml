@@ -1,0 +1,27 @@
+server:
+    port: 9300
+    servlet:
+        context-path: /api/v1/transaction-ms
+
+#management:
+#  endpoints:
+#    web:
+#      base-path: /api/v1/transaction-ms/actuator
+
+spring:
+    application:
+        name: TransactionMS
+    cloud:
+        consul:
+            host: localhost
+            discovery:
+                hostname: localhost
+                health-check-url: http://localhost:${server.port}${server.servlet.context-path}/actuator
+            config:
+                enabled: true
+                prefix: config
+                fail-fast: false
+                defaultContext: application
+                data-key: data
+                profileSeparator: '::'
+                format: YAML

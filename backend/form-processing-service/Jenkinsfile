@@ -1,0 +1,38 @@
+ pipeline {
+    agent any
+    stages {
+    	stage('SonarQube Analysis') {
+            steps {
+                dir('form-processing-service'){
+                    bat 'mvn verify'
+                }
+            }
+        }
+        stage('Build') {
+            steps {
+                script {
+                    def props = readProperties file: 'form-processing-service/src/main/resources/bootstrap.yml'
+                    def portNumber = props.get('server.port')
+                    def jobName = env.JOB_NAME
+                    def pom = readMavenPom file: 'form-processing-service/pom.xml'
+                    def finalName = pom.build.finalName
+ 
+                    bat "\"%userprofile%\\Downloads\\Jenkins\\BatchFiles\\Kill_Process.bat\" ${portNumber}"
+                    dir('form-processing-service'){
+                        bat 'mvn clean install'
+                    }
+                    bat "\"%userprofile%\\Downloads\\Jenkins\\BatchFiles\\Deploy_Maven.bat\" ${jobName} ${finalName}"
+                }
+            }
+        }
+        stage('Wait for Frontend Deployment') {
+          steps {
+            script {
+                  def frontendJob = build job: 'TaxTracker_Frontend', wait : true
+                 //frontendJob.join()
+                }
+            }
+        }
+    }
+}
+ 

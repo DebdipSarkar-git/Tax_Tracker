@@ -1,0 +1,19 @@
+package com.infypp.taxtracker.document_upload_service.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class FileUploadRqstDto {
+
+    private String fileName;
+
+    private String fileType;
+
+    private float size;
+    
+    private byte[] fileData;
+}

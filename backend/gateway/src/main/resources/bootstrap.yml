@@ -1,0 +1,30 @@
+spring:
+    application:
+        name: GatewayMS
+    cloud:
+        consul:
+            host: localhost
+            discovery:
+                enabled: true
+                hostname: localhost
+            config:
+                enabled: true
+                prefix: config
+                fail-fast: false
+                defaultContext: application
+                data-key: data
+                profileSeparator: '::'
+                format: YAML
+        gateway:
+            discovery:
+                locator:
+                    enabled: true
+            routes:
+                - id: TransactionMS
+                  uri: lb://TransactionMS
+                  predicates:
+                    - Path=/transactions/*
+                - id: SecurityMS
+                  uri: lb://SecurityMS
+                  predicates:
+                    - Path=/api/v1/auth/**, /api/v1/demo/**
